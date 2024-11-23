@@ -3,6 +3,7 @@ import 'dart:js' as js;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:slide_countdown/slide_countdown.dart';
 
 class EventContainer extends StatefulWidget {
   String website_url;
@@ -17,11 +18,7 @@ class _EventContainerState extends State<EventContainer> {
   Widget build(BuildContext context) {
     double height=MediaQuery.of(context).size.height;
     double width=MediaQuery.of(context).size.width;
-    return InkWell(
-      onTap: (){
-        js.context.callMethod('open', [this.widget.website_url]);
-      },
-      child: Container(
+    return  Container(
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -74,16 +71,55 @@ class _EventContainerState extends State<EventContainer> {
                    mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("AI Cloud ",style: GoogleFonts.archivoBlack(
-                      fontSize: 0.016*width,
-                      fontWeight: FontWeight.bold,
-                    ),)
+                    Text("AI Cloud ",
+                      overflow: TextOverflow.ellipsis,
+                      style: GoogleFonts.archivoBlack(
+                      fontSize: 0.012*width,
+                    ),),
+                    Text("Sub titile",style:
+                    GoogleFonts.archivoBlack(
+                        color: Colors.black,
+                        fontSize: 0.009*width
+                    ),
+                      ),
+                    Divider(
+                        thickness: 2,
+                      color: Colors.black,
+                    ),
+
+                    Text("Venue:",style:
+                    GoogleFonts.archivoBlack(
+                        color: Colors.black,
+                        fontSize: 0.009*width
+                    ),
+                    ),
+
+                    Text("Chennai,India",style:
+                      GoogleFonts.archivoBlack(
+                          color: Colors.black,
+                          fontSize: 0.01*width
+                      ),
+                    ),
+                    Spacer(),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: InkWell(
+                        onTap: (){
+                          js.context.callMethod('open', [this.widget.website_url]);
+                        },
+                        child: Text("Read more",
+                          style: GoogleFonts.archivoBlack(
+                              color: Colors.black,
+                              fontSize: 0.01*width
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
             ),)
           ],
         ),
-      ),
     );
   }
 }

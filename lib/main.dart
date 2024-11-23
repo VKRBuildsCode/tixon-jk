@@ -84,10 +84,6 @@ class _AndroidState extends State<Android> {
               // color: Color(0xff80C4E9),
               color:Colors.white,
               border: Border(
-                bottom:BorderSide(
-                  width: 2,
-                   color: Colors.black
-                ),
               )
             ),
             height: 82,

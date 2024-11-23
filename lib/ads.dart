@@ -34,16 +34,7 @@ class _AdsState extends State<Ads> {
                   Container(
                       decoration: BoxDecoration(
                           boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.5), // Shadow color
-                              offset: Offset(5, 5), // Shadow position (right and down)
-                              blurRadius: 10, // Blur effect
-                              spreadRadius: 0, // No spread
-                            ),
                           ],
-                        border: Border.all(
-                          width: 2
-                        ),
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(
                             10,
